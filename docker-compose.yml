@@ -4,6 +4,7 @@ services:
     frontend:
         # use the docker file provided
         build: 
+            context: .
             dockerfile: ./frontend/dev.Dockerfile
         # name of container in docker daemon
         container_name: scrapbook-frontend
