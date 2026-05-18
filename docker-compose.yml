@@ -5,7 +5,7 @@ services:
         # use the docker file provided
         build: 
             context: .
-            dockerfile: ./frontend/dev.Dockerfile
+            dockerfile: ./frontend/Dockerfile
         # name of container in docker daemon
         container_name: scrapbook-frontend
         # expose port
@@ -13,6 +13,16 @@ services:
             # port used by vite
             - 80:80
         # use internal network
+        networks:
+            - internal
+
+    backend:
+        build:
+            context: .
+            dockerfile: ./backend/Dockerfile
+        container_name: scrapbook-backend
+        ports:
+            - 3000:3000
         networks:
             - internal
 
