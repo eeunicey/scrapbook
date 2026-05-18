@@ -19,4 +19,6 @@ COPY --from=source /src/backend /app
 
 WORKDIR /app
 
+RUN npm install
+
 CMD ["npm", "start"]
