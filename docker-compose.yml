@@ -1,0 +1,21 @@
+# -- Docker Compose Example --
+# sane defaults implemented
+services:
+    frontend:
+        # use the docker file provided
+        build: 
+            dockerfile: ./frontend/dev.Dockerfile
+        # name of container in docker daemon
+        container_name: scrapbook-frontend
+        # expose port
+        ports:
+            # port used by vite
+            - 80:80
+        # use internal network
+        networks:
+            - internal
+
+
+networks:
+    internal:
+        driver: bridge
