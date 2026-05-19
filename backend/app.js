@@ -1,19 +1,16 @@
-import express from 'express'
-import { config } from './config.js'
-const app = express()
-const port = config.port
+import express from 'express';
+import config from '#root/config';
+import healthChecker from '#routes/health'
 
+// constants
+const app = express();
+const port = config.port;
+console.log(`Current config:\n${JSON.stringify(config, null, 2)}`);
 
+// routes
+app.use('/api/health', healthChecker);
+
+// start app
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-    console.log(config)
-})
-
-
-app.get('/', (req, res) => {
-    return res.send("");
-})
-
-app.get('/api/health', (req, res) => {
-    return res.send({"status": "ok"})
-})
+    console.log("app listening on port", port);
+});

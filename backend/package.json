@@ -8,10 +8,15 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "node --watch app.js --env-file=dev.env",
+    "dev": "node --watch --env-file=dev.env app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "imports": {
+    "#root/*": "./*.js",
+    "#routes/*": "./routes/*.js",
+    "#utils/*": "./utils/*.js"
   }
 }

@@ -1,5 +1,5 @@
 # --- BUILD ARGS ---
-ARG TARGET_BRANCH=test
+ARG TARGET_BRANCH=feat/app-structure
 
 # --- SOURCE STAGE ---
 FROM node:26-alpine AS source
