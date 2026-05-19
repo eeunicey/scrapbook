@@ -1,15 +1,17 @@
-const express = require('express')
+import express from 'express'
+import { config } from './config.js'
 const app = express()
-const port = 3000
+const port = config.port
 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
+    console.log(config)
 })
 
 
 app.get('/', (req, res) => {
-    return res.send('')
+    return res.send("");
 })
 
 app.get('/api/health', (req, res) => {
