@@ -16,6 +16,7 @@ services:
         networks:
             - internal
 
+
     backend:
         build:
             context: .
@@ -25,7 +26,8 @@ services:
             - 3000:3000
         networks:
             - internal
-
+        volumes:
+            - ./data:/data
 
 networks:
     internal:
